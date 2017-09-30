@@ -1,0 +1,55 @@
+﻿ <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Чат!</title>
+
+      <!-- Google Fonts -->
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+      <!-- CSS Reset -->
+      <link rel="stylesheet" href="http://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+      <!-- Milligram CSS minified -->
+      <link rel="stylesheet" href="http://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+
+      <link rel="stylesheet" href="./components/chat/chat.css"/>
+      <link rel="stylesheet" href="./components/app/app.css" />
+      <link rel="stylesheet" href="./components/Notification/Notification.css" />
+
+    
+  </head>
+  <body>
+    
+    <div class="app"></div>
+    <script src="./components/Notification/Notification.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
+    <script src="./components/chat/chat.lodash.js"></script>
+    <script src="./components/chat/chat.js"></script>
+    <script src="./components/form/form.js"></script>
+    <script src="./components/user/user.js"></script>
+    <script src="./components/app/app.js"></script>
+  
+     
+
+    <!-- Application start -->
+    <script>
+        'use strict';
+        var nameU = '';
+        var photoU = '';
+        while(nameU==''||photoU=='')
+        {
+            nameU = prompt('Введите свое имя');
+            photoU = prompt('Введите ссылку на флто вашего аватара', 'http://www.sostav.ru/app/public/images/news/2015/03/27/tarantino.jpeg?rand=0.2829434052849574');
+            if (nameU == ''||photoU=='')
+                alert('Заполните все поля правильно!');
+        }
+        window.nameUser_identety = nameU;
+        var user1 = new window.User({ name: nameU, photo: photoU });
+      new window.App({
+          el: document.querySelector('.app'),
+          user: user1
+      });
+      
+    </script>
+  </body>
+</html>
