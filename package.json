@@ -1,15 +1,23 @@
 {
-  "name": "components_1601_1930",
+  "name": "chat2.0",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "hint": "jshint components/**/*.js"
-  },
-  "keywords": [],
-  "author": "Artsiom Mezin",
-  "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "jshint": "^2.9.4"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ilya77797/chat2.0.git"
+  },
+  "author": «Ilya»,
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ilya77797/chat2.0/issues"
+  },
+  "homepage": "https://github.com/Ilya77797/chat2.0#readme"
 }
