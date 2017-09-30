@@ -6,16 +6,22 @@
   "dependencies": {
     "jshint": "^2.9.4"
   },
+  "main": "index.js",
+  "engines": {
+    "node": "8.5.0",
+    "npm": "5.3.0"
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+    
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ilya77797/chat2.0.git"
   },
-  "author": «»,
-  "license": "ISC",
+
   "bugs": {
     "url": "https://github.com/Ilya77797/chat2.0/issues"
   },
