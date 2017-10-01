@@ -15,11 +15,19 @@ a{
 	margin:0 auto;
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:767px) and (min-width: 421px) {
 
     .app {
         width: 100vw;
         margin:0 auto;
     }
 
+}
+
+@media  screen and (max-width:420px){
+    .app {
+        width: 100vw;
+        margin:0 auto;
+        overflow-y:hidden;
+    }
 }
