@@ -26,6 +26,11 @@ const Router = require('koa-router');
 const router = new Router();
 
 let clients = [];
+router.get('/first', async (ctx, next)=>{
+  var massData= await MessageBD.find();
+  ctx.body=massData;
+
+});
 
 router.get('/subscribe', async (ctx, next) => {
 
@@ -63,8 +68,8 @@ router.post('/publish', async (ctx, next) => {
     ctx.throw(400);
   }
 
-/*  var soobsh=new MessageBD(message);
-  soobsh.save();*/
+  var soobsh=new MessageBD(message);
+  soobsh.save();
 
   clients.forEach(function(resolve) {
     resolve(message);

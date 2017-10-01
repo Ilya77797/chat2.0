@@ -12,7 +12,7 @@
             this.data = [];
             this.el = options.el;
             this._initEvents();
-            this._getDataFromServer(ServerAddr);
+            this._getDataFirtTime();
             this.render();
             
         }
@@ -53,6 +53,28 @@
             
         }
 
+        _getDataFirtTime(){
+            var xhr = new XMLHttpRequest();
+            xhr.open('Get', "/first", true);
+            xhr.send();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState != 4) return;
+                var massData = JSON.parse(xhr.responseText);
+                massData.forEach((data)=>{
+                    El.data.push(data);
+                });
+
+                var event = new CustomEvent('Prineto');
+                El.el.dispatchEvent(event);
+                El._ScroolToBottom();
+                El._getDataFromServer();
+
+
+
+            }
+        }
+
         _getDataFromServer() {
             var xhr = new XMLHttpRequest();
             xhr.open('Get', "/subscribe?r="+ Math.random(), true);
@@ -62,8 +84,11 @@
                 var ObjDataServer = JSON.parse(xhr.responseText);
                // El._StartCometConection(ObjDataServer);
                 El.data.push(ObjDataServer);
-                var event = new CustomEvent('Prineto', { detail: ObjDataServer.data });
+                var event = new CustomEvent('Prineto');
                 El.el.dispatchEvent(event);
+                if(ObjDataServer.name!=window.User.name)
+                    El._NoteInit();
+                El._ScroolToBottom();
                 El._getDataFromServer();
 
               
