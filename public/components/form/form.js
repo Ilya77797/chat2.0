@@ -11,8 +11,8 @@
         _createInterface() {
             this.el.innerHTML = `
            <form>
-		    <textarea name="message" type="text"></textarea>
-			<input type="submit" value="Отправить" />
+		    <textarea class="TextAr"  name="message" type="text"></textarea>
+			<input class="Btn"  type="submit" value="Отправить" />
 		  </form>
             `;
         }
