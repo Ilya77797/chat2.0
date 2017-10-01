@@ -11,10 +11,14 @@
         _createInterface() {
             this.el.innerHTML = `
            <form>
-		    <textarea class="TextAr"  name="message" type="text"></textarea>
-			<input class="Btn"  type="submit" value="Отправить" />
+		    <textarea  name="message" type="text"></textarea>
+			<input  name="btn"  type="submit" value="Отправить" />
 		  </form>
             `;
+           // document.getElementsByName('message').classList.add('TextAr');
+            //document.getElementsByName('btn').classList.add('Btn');
+            this.el.childNodes[1][0].classList.add('TextAr');
+            this.el.childNodes[1][1].classList.add('Btn');
         }
 
      
