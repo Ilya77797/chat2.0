@@ -6,8 +6,8 @@
   "dependencies": {
     "jshint": "^2.9.4",
     "koa":"5.4.2",
-    "mongoose":"5.4.2",
-    "co-busboy":"5.4.2"
+    "mongoose":"4.11.13"
+    
     
   },
   "main": "index.js",
