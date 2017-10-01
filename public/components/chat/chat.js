@@ -81,17 +81,19 @@
             xhr.send();
             xhr.onreadystatechange = function () {
                 if (xhr.readyState != 4) return;
-                var ObjDataServer = JSON.parse(xhr.responseText);
-               // El._StartCometConection(ObjDataServer);
-                El.data.push(ObjDataServer);
-                var event = new CustomEvent('Prineto');
-                El.el.dispatchEvent(event);
-                if(ObjDataServer.name!=window.User.name)
-                    El._NoteInit();
-                El._ScroolToBottom();
-                El._getDataFromServer();
-
-              
+                try{
+                    var ObjDataServer = JSON.parse(xhr.responseText);
+                    El.data.push(ObjDataServer);
+                    var event = new CustomEvent('Prineto');
+                    El.el.dispatchEvent(event);
+                    if(ObjDataServer.name!=window.nameUser_identety)
+                        El._NoteInit();
+                    El._ScroolToBottom();
+                    El._getDataFromServer();
+                }
+                catch(e){
+                    setTimeout(El._getDataFromServer, 5000);
+                }
 
             }
         
