@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "jshint": "^2.9.4",
-    "koa":"5.4.2",
+    "koa":"2.3.0",
     "mongoose":"4.11.13"
     
     
