@@ -77,7 +77,7 @@
 
         _getDataFromServer() {
             var xhr = new XMLHttpRequest();
-            xhr.open('Get', "/subscribe?r="+ Math.random(), true);
+            xhr.open('Get', "/subscribe", true);
             xhr.send();
             xhr.onreadystatechange = function () {
                 if (xhr.readyState != 4) return;
