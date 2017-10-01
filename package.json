@@ -7,7 +7,7 @@
     "jshint": "^2.9.4",
     "koa":"5.4.2",
     "mongoose":"5.4.2",
-    "co":"5.4.2"
+    "co-busboy":"5.4.2"
     
   },
   "main": "index.js",
