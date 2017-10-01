@@ -92,7 +92,8 @@
                     El._getDataFromServer();
                 }
                 catch(e){
-                    setTimeout(El._getDataFromServer, 5000);
+                    console.log('Ошибка: ',e)
+                    setTimeout(El._getDataFromServer, 20000);
                 }
 
             }
